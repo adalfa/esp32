@@ -56,7 +56,7 @@ class MyCharacteristicCallbacks : public BLECharacteristicCallbacks {
 void IRAM_ATTR TimerHandler0(void)
 {
 	if (!loopcurr)
-go=!go;
+  go=false;
 	//timer interrupt toggles pin PIN_D19
 	 
 	
@@ -189,10 +189,11 @@ loopcurr=false;
 // x/2 yellow 
 void loop() {
 FastLED.setBrightness(10);
-fillcolor(blue);
+
 
 while (!deviceConnected)
 {
+  fillcolor(blue);
   Serial.println("sleep");
   delay(1000);
 }

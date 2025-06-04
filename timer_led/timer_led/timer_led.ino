@@ -188,6 +188,7 @@ loopcurr=false;
 
 // x/2 yellow 
 void loop() {
+  FastLED.setMaxPowerInMilliWatts(200);
 FastLED.setBrightness(10);
 
 
@@ -195,7 +196,9 @@ while (!deviceConnected)
 {
   fillcolor(blue);
   Serial.println("sleep");
-  delay(1000);
+  delay(100);
+  fillcolor((unsigned char[]){0,0,0});
+  delay(900);
 }
 
 // if (deviceConnected) {
